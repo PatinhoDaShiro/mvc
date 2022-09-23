@@ -35,14 +35,15 @@ class HomeController extends MainController
 		//var_dump($model);
 		# busca a lista de movimento para o periodo
 		$listar=$model->listarInput($dateStart, $dateEnd);
-		$data['moviments']=$listar;
-		/*
+		$dataInput['moviments']=$listar;
+		
 		$list=$model->listOut($dateStart, $dateEnd);
-		$batata['moviments'] = $list;
-		*/
+		$dataOutput['movimentos'] = $list;
+
+		$Array = array($dataInput['moviments'], $dataOutput['movimentos']);
 		//print_r($data);
 		/** Carrega os arquivos do view **/
-		$this->view->show('home/home', $data);
+		$this->view->show('home/home', $Array);
 		
 	}
 

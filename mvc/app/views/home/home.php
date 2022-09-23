@@ -1,6 +1,6 @@
 <?php if ( ! defined('URL_BASE')) exit;
 
-	//print_r($batata['moviments']);?>
+  ?>
 
 	<html>
   		<head>
@@ -8,25 +8,23 @@
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-	  <?php 
-		$gasto = 3123;
-	?>
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
 			
 		['Data', 'Lucro', 'Gasto'],
 		<?php 
-		foreach($data['moviments'] AS $dma){
+		foreach($data[0] AS $dma){
 			$date = $dma['date'];
 			$valor = $dma['total'];
-			
-			echo "['$date', $valor, $gasto],";
-			}		
+      foreach($data[1] as $dma){
+        $gasto = $dma['total'];
+        echo "['$date', $valor, $gasto],";
 
-	
-	
-	
-	
+      }
+
+			
+			
+			}		
 	?>
         ]);	
 

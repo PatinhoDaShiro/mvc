@@ -11,7 +11,7 @@ class HomeModel extends MainModel{
 		}
 		return $resultado;
     }
-	/*
+	
 	public function listOut($dateStart, $dateEnd){
 		$sql="SELECT DISTINCT date,(SELECT sum(value) FROM moviment WHERE date = m.date) as total, type from moviment m where type = 'output' ";
 		$retorno=$this->db->query($sql, null);
@@ -21,7 +21,7 @@ class HomeModel extends MainModel{
 		}
 		return $resultado;
 	}
-*/
+
     
 
 
